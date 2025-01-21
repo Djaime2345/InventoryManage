@@ -10,6 +10,7 @@ public class Warehouse {
     private int id;
     private String cityOfLocation;
     private static int countOfWarehouses;
+    private Boolean isCold;
     private Products[][] content;
 
     /**
@@ -18,12 +19,14 @@ public class Warehouse {
      * @param name Name of the warehouse
      * @param id Id of the warehouse
      * @param cityOfLocation City where the warehouse is located
+     * @param isCold Tells if the warehouse can contain cold products or not
      *
      */
-    public Warehouse(String name, int id, String cityOfLocation) {
+    public Warehouse(String name, int id, String cityOfLocation, Boolean isCold) {
         this.name = name;
         this.id = id;
         this.cityOfLocation = cityOfLocation;
+        this.isCold = isCold;
         countOfWarehouses++;
     }
 
@@ -55,6 +58,15 @@ public class Warehouse {
     }
 
     /**
+     * Getter of the 'isCold' attribute
+     *
+     * @return The warehouse is cold or not
+     */
+    public Boolean getCold() {
+        return isCold;
+    }
+
+    /**
      * Setter of the warehouse's name
      *
      * @param name  New name of the warehouse
@@ -81,5 +93,12 @@ public class Warehouse {
         this.cityOfLocation = cityOfLocation;
     }
 
-
+    /**
+     * Setter if the warehouse is cold or not
+     *
+     * @param cold It is cold or not
+     */
+    public void setCold(Boolean cold) {
+        isCold = cold;
+    }
 }
