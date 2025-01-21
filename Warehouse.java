@@ -1,3 +1,5 @@
+import javax.lang.model.type.NullType;
+
 /**
  * This class is focused on contains the different warehouses that will keep our products
  *
@@ -67,6 +69,15 @@ public class Warehouse {
     }
 
     /**
+     * Getter of the count of the total warehouses created
+     *
+     * @return The number of warehouses created
+     */
+    public static int getCountOfWarehouses() {
+        return countOfWarehouses;
+    }
+
+    /**
      * Setter of the warehouse's name
      *
      * @param name  New name of the warehouse
@@ -101,4 +112,31 @@ public class Warehouse {
     public void setCold(Boolean cold) {
         isCold = cold;
     }
+
+    /**
+     * Method that initialize your warehouse with the shelves that will contain the product (matrix)
+     *
+     * @param length Length of the matrix
+     * @param width Width of the matrix
+     */
+    public void addShelves(int length, int width){
+        this.content = new Products[length][width];
+    }
+
+    /**
+     * Method that add a product to our warehouse
+     * @param product Object of Product Class
+     */
+    public void addProduct(Products product){
+        for (int i = 0; i < content.length; i++){
+            for (int j = 0; j < content[i].length; j++){
+                if (content[i][j] == null){
+                    content[i][j] = product;
+                    return;
+                }
+            }
+        }
+    }
+
+
 }
