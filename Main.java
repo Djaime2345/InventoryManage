@@ -115,7 +115,7 @@ public class Main {
      * @param warehouse
      */
     public static void addProductIntoWarehouse(Scanner sc, ArrayList<Products> product, ArrayList<Warehouse> warehouse){
-
+        System.out.println("Currently on development!!");
     }
 
     public static void main(String[] args) throws Exception {
@@ -144,6 +144,11 @@ public class Main {
                     break;
                 case 3:
                     addProductIntoWarehouse(sc, sessionProducts, sessionWarehouses);
+                    break;
+                case 4:
+                    session = false;
+                    System.out.println("See you next time!!");
+                    break;
             }
         }
         while(session);
