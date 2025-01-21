@@ -1,5 +1,3 @@
-import javax.lang.model.type.NullType;
-
 /**
  * This class is focused on contains the different warehouses that will keep our products
  *
