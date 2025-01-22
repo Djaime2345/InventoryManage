@@ -128,7 +128,7 @@ public class Warehouse {
     public void addProduct(Products product){
         for (int i = 0; i < content.length; i++){
             for (int j = 0; j < content[i].length; j++){
-                if (content[i][j] == null){
+                if (content[i][j] == null && this.isCold == product.getCold()){
                     content[i][j] = product;
                     return;
                 }
